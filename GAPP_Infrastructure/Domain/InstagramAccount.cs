@@ -6,6 +6,7 @@ namespace GAPP_Infrastructure.Domain
 	{
 		public long Id { get; set; }
 		public string Name { get; set; }
-		public virtual ICollection<InstagramPost> Instagramposts { get; set; }
+		public virtual ICollection<InstagramPost> InstagramPosts { get; set; }
+		public virtual ICollection<AccountFocusSubject> AccountFocusSubjects { get; set; }
 	}
 }

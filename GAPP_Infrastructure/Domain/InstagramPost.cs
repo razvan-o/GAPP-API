@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GAPP_Infrastructure.Domain
 {
@@ -14,5 +15,7 @@ namespace GAPP_Infrastructure.Domain
 		public long LikesCount { get; set; }
 		public long CommentsCount { get; set; }
 		public string Hashtags { get; set; }
+
+		public virtual ICollection<PostFocusSubject> PostFocusSubjects { get; set; }
 	}
 }
