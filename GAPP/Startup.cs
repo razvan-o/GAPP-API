@@ -1,4 +1,6 @@
 using GAPP_Infrastructure.PersistenceLayer;
+using GAPP_Infrastructure.Repositories;
+using GAPP_Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +23,10 @@ namespace GAPP
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+
+			services.AddScoped<PostsService>();
+			services.AddScoped<InstagramAccountRepository>();
+			services.AddScoped<InstagramPostRepository>();
 
 			services.AddDbContext<AppDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("AppEntities")));
